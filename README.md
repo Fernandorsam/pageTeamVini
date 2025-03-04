@@ -1,2 +1,2 @@
 # pageTeamVini
-landing-page para academia de lutas
+ Página destinada academia de lutas

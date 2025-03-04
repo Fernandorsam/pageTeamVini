@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Lighter background for a fresh look */
+}
+
+header {
+    background: #c00; /* Brighter red for a more vibrant appearance */
+    color: #fff;
+    padding: 20px 10px; /* Adjusted padding for better spacing */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+    transition: background 0.3s; /* Smooth transition for background color */
+}
+
+.logo {
+    margin: 0 auto; /* Center the logo */
+}
+
+.nav-links {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center the navigation links */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Spacing between menu items */
+}
+
+.nav-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding for clickable area */
+    transition: background 0.3s; /* Smooth transition for background color */
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.mobile-menu {
+    display: none; /* Hide mobile menu by default */
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block; /* Show mobile menu button on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        background: #b22222; /* Background color for mobile menu */
+        position: absolute; /* Positioning for dropdown */
+        top: 60px; /* Position below the header */
+        width: 100%; /* Full width */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0; /* Increased padding for better spacing */
+    background: #c00; /* Brighter red for consistency with header */
+    color: #fff;
+    position: relative; /* Positioning for potential future enhancements */
+    bottom: 0;
+    width: 100%; /* Ensures footer spans the full width */
+    transition: background 0.3s; /* Smooth transition for background color */
+}
+
+footer:hover {
+    background: #900; /* Darker red on hover for emphasis */
+}
