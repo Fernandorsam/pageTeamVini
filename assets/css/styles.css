@@ -1,80 +1,443 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Modern CSS Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Lighter background for a fresh look */
+    box-sizing: border-box;
+   text-decoration: none;
 }
 
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header Styles */
 header {
-    background: #c00; /* Brighter red for a more vibrant appearance */
+    background: linear-gradient(135deg, rgba(80, 2, 2, 0.842), rgba(16, 15, 15, 0.979));
     color: #fff;
-    padding: 20px 10px; /* Adjusted padding for better spacing */
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
-    transition: background 0.3s; /* Smooth transition for background color */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    margin: 0 auto; /* Center the logo */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: center; /* Center the navigation links */
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
-}
-
-.nav-links li {
-    margin: 0 15px; /* Spacing between menu items */
+    display: flex;
+    gap: 2rem;
+    list-style: none;
 }
 
 .nav-links a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px; /* Padding for clickable area */
-    transition: background 0.3s; /* Smooth transition for background color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Light background on hover */
-    border-radius: 5px; /* Rounded corners on hover */
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-.mobile-menu {
-    display: none; /* Hide mobile menu by default */
+/* Main Content Styles */
+main {
+    margin-top: 120px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sobre Section */
+#sobre {
+    padding: 4rem 0;
+}
+
+.sobre-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.sobre-imagem img:hover {
+    transform: scale(1.02);
+}
+
+.sobre-texto {
+    padding: 2rem;
+}
+
+.sobre-texto h3 {
+    color: rgb(57, 2, 2);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.sobre-credenciais {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.credencial {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.credencial:hover {
+    transform: translateY(-5px);
+}
+
+.credencial .numero {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c00;
+    margin-bottom: 0.5rem;
+}
+
+.credencial .texto {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .mobile-menu {
-        display: block; /* Show mobile menu button on mobile */
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .sobre-texto {
+        padding: 1rem 0;
+    }
+
+    .sobre-credenciais {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Modalidades Section */
+#modalidades {
+    padding: 4rem 0;
+}
+
+.modalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.modalidade {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.modalidade:hover {
+    transform: translateY(-10px);
+}
+
+.modalidade h3 {
+    color: rgb(57, 2, 2);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Galeria Section */
+#galeria {
+    background: #fff;
+    margin: 2rem -2rem;
+    padding: 4rem 2rem;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.galeria-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galeria-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Notícias Section */
+#noticias {
+    padding: 4rem 0;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+article {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    color: rgb(57, 2, 2);
+    margin-bottom: 1rem;
+}
+
+/* Section Headers */
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(57, 2, 2);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #c00;
+    border-radius: 2px;
+}
+
+/* Contact Section */
+#contato {
+    background: #fff;
+    margin: 2rem -2rem;
+    padding: 4rem 2rem;
+}
+
+.contato-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contato-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.contato-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+    transform: translateY(-5px);
+}
+
+.contato-item h3 {
+    color: rgb(57, 2, 2);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.contato-item p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.contato-form {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contato-form h3 {
+    color: rgb(57, 2, 2);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #c00;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contato-form button {
+    width: 100%;
+    padding: 1rem;
+    background: #c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contato-form button:hover {
+    background: #900;
+}
+
+@media (max-width: 768px) {
+    .contato-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contato-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, rgba(80, 2, 2, 0.842), rgba(16, 15, 15, 0.979));
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-right: 30px;
     }
 
     .nav-links {
-        display: none; /* Hide links by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        background: #b22222; /* Background color for mobile menu */
-        position: absolute; /* Positioning for dropdown */
-        top: 60px; /* Position below the header */
-        width: 100%; /* Full width */
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background:linear-gradient(135deg, rgba(35, 1, 1, 0.842), rgba(24, 2, 2, 0.979));
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
     }
 
     .nav-links.active {
-        display: flex; /* Show links when active */
+        display: flex;
     }
-}
 
-footer {
-    text-align: center;
-    padding: 20px 0; /* Increased padding for better spacing */
-    background: #c00; /* Brighter red for consistency with header */
-    color: #fff;
-    position: relative; /* Positioning for potential future enhancements */
-    bottom: 0;
-    width: 100%; /* Ensures footer spans the full width */
-    transition: background 0.3s; /* Smooth transition for background color */
-}
+    .nav-links a {
+        padding: 1rem;
+    }
 
-footer:hover {
-    background: #900; /* Darker red on hover for emphasis */
+    main {
+        margin-top: 100px;
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
 }

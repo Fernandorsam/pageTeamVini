@@ -4,63 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Vini - Academia de Lutas</title>
+    <link rel="shortcut icon" href="/assets/img/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="assets/img/logo.jpg" alt="Logo Team Vini" style="border-radius: 50%;">
-        </div>
-        <nav>
-            <div class="mobile-menu">
-                <button class="menu-toggle">☰</button>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/img/logo.jpg" alt="Logo Team Vini">
             </div>
-            <ul class="nav-links">
-                <li><a href="#modalidades">Modalidades</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <div class="mobile-menu">
+                    <button class="menu-toggle">☰</button>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#modalidades">Modalidades</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#noticias">Notícias</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
+        <section id="sobre">
+            <h2>Sobre o Professor</h2>
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="assets/img/fotoprofessor.jpg" alt="Professor Team Vini">
+                </div>
+                <div class="sobre-texto">
+                    <h3>MARCOS VINICIUS</h3>
+                    <p>Professor experiente e dedicado, com anos de experiência em artes marciais. Formado nas melhores academias, traz conhecimento e disciplina para seus alunos, desenvolvendo não apenas habilidades físicas, mas também valores como respeito, perseverança e determinação.</p>
+                    <div class="sobre-credenciais">
+                        <div class="credencial">
+                            <span class="numero">10+</span>
+                            <span class="texto">Anos de Experiência</span>
+                        </div>
+                        <div class="credencial">
+                            <span class="numero">1000+</span>
+                            <span class="texto">Alunos Formados</span>
+                        </div>
+                        <div class="credencial">
+                            <span class="numero">50+</span>
+                            <span class="texto">Campeonatos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="modalidades">
             <h2>Modalidades Oferecidas</h2>
-            <div class="modalidade">
-                <h3 style="font-size: 1.5em; font-weight: bold;">JIU JITSU</h3>
-                <p style="font-size: 1.2em;">Aprenda a arte suave com nossos instrutores qualificados.</p>
-            </div>
-            <div class="modalidade">
-                <h3 style="font-size: 1.5em; font-weight: bold;">BOXE</h3>
-                <p style="font-size: 1.2em;">Treine com os melhores e melhore suas habilidades de combate.</p>
-            </div>
-            <div class="modalidade">
-                <h3 style="font-size: 1.5em; font-weight: bold;">MUAY THAI</h3>
-                <p style="font-size: 1.2em;">Desenvolva força e resistência com esta arte marcial tailandesa.</p>
-            </div>
-            <div class="modalidade">
-                <h3 style="font-size: 1.5em; font-weight: bold;">MMA</h3>
-                <p style="font-size: 1.2em;">Combinação de várias artes marciais para um treinamento completo.</p>
+            <div class="modalidades-grid">
+                <div class="modalidade">
+                    <h3>JIU JITSU</h3>
+                    <p>Aprenda a arte suave com nossos instrutores qualificados.</p>
+                </div>
+                <div class="modalidade">
+                    <h3>BOXE</h3>
+                    <p>Treine com os melhores e melhore suas habilidades de combate.</p>
+                </div>
+                <div class="modalidade">
+                    <h3>MUAY THAI</h3>
+                    <p>Desenvolva força e resistência com esta arte marcial tailandesa.</p>
+                </div>
+                <div class="modalidade">
+                    <h3>MMA</h3>
+                    <p>Combinação de várias artes marciais para um treinamento completo.</p>
+                </div>
             </div>
         </section>
         <section id="galeria">
             <h2>Galeria de Fotos</h2>
             <div class="galeria-container">
-                <img src="assets/img/logo.jpg" alt="Logo Team Vini">
-                <img src="assets/img/logo.jpg" alt="Logo Team Vini">
-                <img src="assets/img/logo.jpg" alt="Logo Team Vini">
-                <img src="assets/img/logo.jpg" alt="Logo Team Vini">
+                <img src="assets/img/equipeboxe.png" alt="foto da equipe de boxe">
+                <img src="assets/img/equipemuaythay.png" alt="foto da equipe de muay thay">
+                <img src="assets/img/equipejj.jpg" alt="foto da equipe bjj">
+                <img src="assets/img/equipemma.png" alt="foto da equipe MMA">
             </div>
         </section>
         <section id="noticias">
             <h2>Notícias</h2>
-            <article>
-                <h3>Novas Aulas de Jiu Jitsu</h3>
-                <p>Estamos oferecendo novas aulas de Jiu Jitsu aos sábados às 10h.</p>
-            </article>
-            <article>
-                <h3>Campeonato de Boxe</h3>
-                <p>Participe do nosso campeonato de boxe no próximo mês!</p>
-            </article>
+            <div class="noticias-grid">
+                <article>
+                    <h3>Novas Aulas de Jiu Jitsu</h3>
+                    <p>Estamos oferecendo novas aulas de Jiu Jitsu aos sábados às 10h. Venha fazer parte da nossa equipe e aprenda com os melhores instrutores da região!</p>
+                </article>
+                <article>
+                    <h3>Campeonato de Boxe</h3>
+                    <p>Participe do nosso campeonato de boxe no próximo mês! Inscrições abertas para todas as categorias. Prepare-se para mostrar suas habilidades no ringue!</p>
+                </article>
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <h3>Endereço</h3>
+                        <p>QD 305, Lote 8B Loja 2</p>
+                        <p>Recanto das Emas</p>
+                        <p>Brasília - DF</p>
+                    </div>
+                    <div class="contato-item">
+                        <h3>Telefone</h3>
+                       <a href="tel:+556198444-0287">(61)98444-0287</a>
+                       
+                        
+                    </div>
+                    <div class="contato-item">
+                        <h3>Email</h3>
+                        <a href="mailto:teamvinifightclube@gmail.com">teamvinifightclube@gmail.com</a>
+                    </div>
+                    <div class="contato-item">
+                        <h3>Horário de Funcionamento</h3>
+                        <p>Segunda a Sexta: 7h às 22h</p>
+                        <p>Sábado: 8h às 12h</p>
+                       
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                        </div>
+                       
+                        <div class="form-group">
+                            <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                        </div>
+                        <button type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
