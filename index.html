@@ -2,11 +2,29 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Team Vini - Academia de Lutas</title>
     <link rel="shortcut icon" href="/assets/img/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <head>
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       
+    </head>
+    <meta name="description" content="Team Vini - Academia de Lutas. Aprenda Jiu Jitsu, Boxe, Muay Thai e MMA com os melhores instrutores de Brasília.">
+    <meta name="keywords" content="Academia de Lutas, Jiu Jitsu, Boxe, Muay Thai, MMA, Artes Marciais, Brasília">
+    <meta name="author" content="Team Vini">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Team Vini - Academia de Lutas">
+    <meta property="og:description" content="Aprenda Jiu Jitsu, Boxe, Muay Thai e MMA com os melhores instrutores de Brasília.">
+    <meta property="og:image" content="https://seusite.com/assets/img/logo.jpg">
+    <meta property="og:url" content="https://seusite.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Team Vini - Academia de Lutas">
+    <meta name="twitter:description" content="Aprenda Jiu Jitsu, Boxe, Muay Thai e MMA com os melhores instrutores de Brasília.">
+    <meta name="twitter:image" content="https://seusite.com/assets/img/logo.jpg">
 </head>
 <body>
     <header>
@@ -14,7 +32,7 @@
             <div class="logo">
                 <img src="assets/img/logo.jpg" alt="Logo Team Vini">
             </div>
-            <nav>
+            <nav aria-label="Main Navigation">
                 <div class="mobile-menu">
                     <button class="menu-toggle">☰</button>
                 </div>
@@ -28,12 +46,11 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main id="main-content">
         <section id="sobre">
-            <h2>Sobre o Professor</h2>
             <div class="sobre-container">
                 <div class="sobre-imagem">
-                    <img src="assets/img/fotoprofessor.jpg" alt="Professor Team Vini">
+                    <img src="assets/img/fotoprofessor.jpg" alt="Foto do professor Marcos Vinicius, instrutor da Team Vini">
                 </div>
                 <div class="sobre-texto">
                     <h3>MARCOS VINICIUS</h3>
@@ -79,10 +96,10 @@
         <section id="galeria">
             <h2>Galeria de Fotos</h2>
             <div class="galeria-container">
-                <img src="assets/img/equipeboxe.png" alt="foto da equipe de boxe">
-                <img src="assets/img/equipemuaythay.png" alt="foto da equipe de muay thay">
-                <img src="assets/img/equipejj.jpg" alt="foto da equipe bjj">
-                <img src="assets/img/equipemma.png" alt="foto da equipe MMA">
+                <img src="assets/img/equipeboxe.png" alt="Foto da equipe de boxe da Team Vini">
+                <img src="assets/img/equipemuaythay.png" alt="Foto da equipe de Muay Thai da Team Vini">
+                <img src="assets/img/equipejj.jpg" alt="Foto da equipe de Jiu Jitsu da Team Vini">
+                <img src="assets/img/equipemma.png" alt="Foto da equipe de MMA da Team Vini">
             </div>
         </section>
         <section id="noticias">
@@ -104,15 +121,20 @@
                 <div class="contato-info">
                     <div class="contato-item">
                         <h3>Endereço</h3>
-                        <p>QD 305, Lote 8B Loja 2</p>
-                        <p>Recanto das Emas</p>
-                        <p>Brasília - DF</p>
+                        <div class="adress">
+                            <p>QD 305, Lote 8B Loja 2</p>
+                            <p>Recanto das Emas</p>
+                            <p>Brasília - DF</p>
+                            <div class="contato-maps">
+                                <a href="https://maps.app.goo.gl/qqywD6JYVwoCXH427">
+                                    <img src="assets/icon/map.png" alt="Ícone do mapa" class="map-icon">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="contato-item">
                         <h3>Telefone</h3>
-                       <a href="tel:+556198444-0287">(61)98444-0287</a>
-                       
-                        
+                        <a href="tel:+556198444-0287">(61) 98444-0287</a>
                     </div>
                     <div class="contato-item">
                         <h3>Email</h3>
@@ -122,20 +144,17 @@
                         <h3>Horário de Funcionamento</h3>
                         <p>Segunda a Sexta: 7h às 22h</p>
                         <p>Sábado: 8h às 12h</p>
-                       
                     </div>
                 </div>
                 <div class="contato-form">
                     <h3>Envie uma Mensagem</h3>
                     <form id="contact-form">
                         <div class="form-group">
+                            <label for="nome">Seu Nome</label>
                             <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Seu Email" required>
-                        </div>
-                       
-                        <div class="form-group">
+                            <label for="mensagem">Sua Mensagem</label>
                             <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
                         </div>
                         <button type="submit">Enviar Mensagem</button>
@@ -145,7 +164,13 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Team Vini. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2023 Team Vini. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
     <script src="assets/js/scripts.js"></script>
 </body>

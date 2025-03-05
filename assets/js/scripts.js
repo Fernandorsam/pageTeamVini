@@ -43,10 +43,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email').value;
     var mensagem = document.getElementById('mensagem').value;
 
-    var whatsappMessage = `Nome: ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`;
+    var whatsappMessage = `Nome: ${nome}\nMensagem: ${mensagem}`;
     var whatsappNumber = '5561984440287'; // Substitua pelo número de telefone do WhatsApp com código do país
     var whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
 
