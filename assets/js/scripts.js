@@ -42,12 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    var nome = document.getElementById('nome').value;
-    var mensagem = document.getElementById('mensagem').value;
+    let nome = document.getElementById('nome').value;
+    let mensagem = document.getElementById('mensagem').value;
 
-    var whatsappMessage = `Nome: ${nome}\nMensagem: ${mensagem}`;
-    var whatsappNumber = '5561984440287'; // Substitua pelo número de telefone do WhatsApp com código do país
-    var whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+    let whatsappMessage = `Nome: ${nome}\nMensagem: ${mensagem}`;
+    let whatsappNumber = '5561984440287';
+    let whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappUrl, '_blank');
+});
+
+let sortButton = document.getElementById('btn-sort');
+sortButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    let whatsappNumber = '5561984440287';
+    let sortUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=Óla, gostaria de saber mais sobrea a Rifa.`;
+
+    window.open(sortUrl, '_blank');
 });
