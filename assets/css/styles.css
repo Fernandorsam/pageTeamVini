@@ -3,16 +3,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   text-decoration: none;
+    text-decoration: none;
+}
+/* Preload the font */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
+/* Fallback font */
 body {
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
-    overflow-x:hidden;
-    
+    overflow-x: hidden;
+    font-display: swap; /* Ensure text is displayed with fallback font until the custom font loads */
 }
 
 /* Header Styles */
@@ -22,6 +33,7 @@ header {
     padding: 1rem;
     position: fixed;
     width: 100%;
+    height: auto;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -29,6 +41,7 @@ header {
 
 .header-container {
     max-width: 1200px;
+    height: auto;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -36,8 +49,8 @@ header {
 }
 
 .logo img {
-    width: 80px;
-    height: 80px;
+    width: 50%;
+    height: fit-content;;
     border-radius: 50%;
     border: 3px solid #fff;
     transition: transform 0.3s ease;
@@ -51,19 +64,23 @@ header {
 nav {
     display: flex;
     align-items: center;
+    justify-content:space-around;
 }
 
 .nav-links {
     display: flex;
+    justify-content: end;
+    justify-content: end;
     gap: 2rem;
     list-style: none;
+    margin-left: 10px;
 }
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: all 0.3s ease;
@@ -86,6 +103,7 @@ main {
 /* Sobre Section */
 #sobre {
     padding: 4rem 0;
+    min-height: 400px; /* Ensure a stable layout */
 }
 
 .sobre-container {
@@ -96,8 +114,8 @@ main {
 }
 
 .sobre-imagem img {
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: fit-content;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -109,6 +127,7 @@ main {
 
 .sobre-texto {
     padding: 2rem;
+    min-height: 400px; /* Ensure a stable layout */
 }
 
 .sobre-texto h3 {
@@ -182,7 +201,6 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .modalidade:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -239,7 +257,8 @@ main {
     gap: 2rem;
     margin-top: 2rem;
 }
-#btn-sort{
+
+#btn-sort {
     width: 100%;
     height: 6vh;
     margin: 5px auto;
@@ -252,16 +271,25 @@ main {
     font-weight: 700;
     animation: blink 3.5s infinite ease-in-out;
 }
-#btn-sort:hover{
-    opacity: 0.6; 
+
+#btn-sort:hover {
+    opacity: 0.6;
     animation: none;
 }
-@keyframes blink{
-    25%{
-        opacity: 0.3}
-    50%{ opacity: 0.6}
-    75%{ opacity: 0.8}
-    100%{ opacity: 1}
+
+@keyframes blink {
+    25% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 article {
@@ -323,6 +351,7 @@ section h2::after {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
+
 .contato-maps {
     width: 30%;
     height: auto;
@@ -347,13 +376,13 @@ section h2::after {
 .map-icon:hover {
     transform: scale(1.05); /* Slightly enlarge the icon on hover */
 }
-.adress{
+
+.adress {
     width: 100%;
     display: flex;
     flex-direction: column;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
-    
 }
 
 .contato-item {
@@ -433,10 +462,7 @@ section h2::after {
     background: #900;
 }
 
-
-
 /* Footer Styles */
-
 footer {
     background: linear-gradient(135deg, rgba(80, 2, 2, 0.842), rgba(16, 15, 15, 0.979));
     color: #fff;
@@ -467,7 +493,6 @@ footer {
     color: #c00; /* Muda a cor ao passar o mouse */
 }
 
-
 /* Mobile Menu */
 .menu-toggle {
     display: none;
@@ -479,27 +504,29 @@ footer {
 }
 
 /* Responsive Design */
+
+@media (max-width: 468px){
+    .logo img {
+        width: 30%;
+        height: 20%;
+
+    }
+    .sobre-imagem img {
+        width:50vw;
+        height:100vh;
+    }
+   
+}
 @media (max-width: 768px) {
-
-    .sobre-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .logo img {
+        width: 40%;
     }
-
-    .sobre-texto {
-        padding: 1rem 0;
-    }
-
-    .sobre-credenciais {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-
-
-    .menu-toggle {
-        display: block;
-        margin-right: 30px;
+    .header-container {
+       grid-template-columns: 1fr;
+       justify-content: space-evenly;
+        height: 16vh;
+        flex-direction: row;
+        align-items: center;
     }
 
     .nav-links {
@@ -508,7 +535,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background:linear-gradient(135deg, rgba(35, 1, 1, 0.842), rgba(24, 2, 2, 0.979));
+        background: linear-gradient(135deg, rgba(35, 1, 1, 0.842), rgba(24, 2, 2, 0.979));
         flex-direction: column;
         padding: 1rem;
         text-align: center;
@@ -522,21 +549,48 @@ footer {
         padding: 1rem;
     }
 
+    .menu-toggle {
+        display: block;
+        margin-right: 30px;
+    }
+
     main {
         margin-top: 100px;
         padding: 1rem;
     }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .sobre-texto {
+        padding: 1rem 0;
+    }
+
+    .sobre-credenciais {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     .contato-container {
         grid-template-columns: 1fr;
+        padding: 1rem;
     }
-    
+
     .contato-info {
         grid-template-columns: 1fr;
+    }
+
+    .contato-maps {
+        width: 100%;
     }
 
     section h2 {
         font-size: 2rem;
     }
+
     .footer-content {
         flex-direction: column;
     }
@@ -544,4 +598,46 @@ footer {
     .social-icons {
         margin-top: 0.5rem;
     }
+
+    .sobre-imagem img {
+        width: 100%;
+    }
+
+    .modalidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-container {
+        grid-template-columns: 1fr;
+    }
+
+    .noticias-grid {
+        grid-template-columns: 1fr;
+    }
 }
+  @media (min-width: 790px)  {
+    .logo img {
+       max-width: fit-content;
+        max-height:24vh;
+    }
+
+    .header-container {
+        height: 26vh;
+        width: 100vw;
+        justify-content: space-between;
+        padding: 0 25px;
+        
+    }
+    .sobre-imagem img{
+        width: 30vw;
+        height: 100%;
+    }
+    .nav-links{
+        max-width: 30vw;
+        gap: 1px;
+        padding: 1.4rem;
+    }
+
+    
+    
+}  

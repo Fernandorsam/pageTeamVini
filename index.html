@@ -2,16 +2,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Vini - Academia de Lutas</title>
-    <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="shortcut icon" href="assets/img/logo.webp" type="image/x-icon">
+   
+    <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-       
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="preload" href="assets/img/logo.webp" as="image">
+    <link rel="preload" href="assets/img/fotoprofessor.webp" as="image">
     <meta name="description" content="Team Vini - Academia de Lutas. Aprenda Jiu Jitsu, Boxe, Muay Thai e MMA com os melhores instrutores de Brasília.">
     <meta name="keywords" content="Academia de Lutas, Jiu Jitsu, Boxe, Muay Thai, MMA, Artes Marciais, Brasília">
     <meta name="author" content="Team Vini">
@@ -24,15 +25,16 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Team Vini - Academia de Lutas">
     <meta name="twitter:description" content="Aprenda Jiu Jitsu, Boxe, Muay Thai e MMA com os melhores instrutores de Brasília.">
-    <meta name="twitter:image" content="https://seusite.com/assets/img/logo.jpg">
+    <meta name="twitter:image" content="https://seusite.com/assets/img/logo.webp">
+    <script src="assets/js/scripts.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
                 <picture>
-                    <source srcset="assets/img/logo.jpg" type="image/webp">
-                    <img src="assets/img/logo.jpg" alt="Logo Team Vini" loading="lazy">
+                    <source srcset="assets/img/logo.webp" type="image/webp">
+                    <img src="assets/img/logo.webp" alt="Logo Team Vini" loading="lazy">
                 </picture>
             </div>
             <nav aria-label="Main Navigation">
@@ -54,8 +56,8 @@
             <div class="sobre-container">
                 <div class="sobre-imagem">
                     <picture>
-                        <source srcset="assets/img/fotoprofessor.jpg" type="image/webp">
-                        <img src="assets/img/fotoprofessor.jpg" alt="Foto do professor Marcos Vinicius, instrutor da Team Vini" loading="lazy">
+                        <source srcset="assets/img/fotoprofessor.webp" type="image/webp">
+                        <img src="assets/img/fotoprofessor.webp" alt="Foto do professor Marcos Vinicius, instrutor da Team Vini" loading="lazy">
                     </picture>
                 </div>
                 <div class="sobre-texto">
@@ -103,19 +105,19 @@
             <h2>Galeria de Fotos</h2>
             <div class="galeria-container">
                 <picture>
-                    <source srcset="assets/img/equipeboxe.png" type="image/webp">
+                    <source srcset="assets/img/equipeboxe.webp" type="image/webp">
                     <img src="assets/img/equipeboxe.png" alt="Foto da equipe de boxe da Team Vini" loading="lazy">
                 </picture>
                 <picture>
-                    <source srcset="assets/img/equipemuaythay.png" type="image/webp">
+                    <source srcset="assets/img/equipemuaythay.webp" type="image/webp">
                     <img src="assets/img/equipemuaythay.png" alt="Foto da equipe de Muay Thai da Team Vini" loading="lazy">
                 </picture>
                 <picture>
-                    <source srcset="assets/img/equipejj.jpg" type="image/webp">
+                    <source srcset="assets/img/equipejj.webp" type="image/webp">
                     <img src="assets/img/equipejj.jpg" alt="Foto da equipe de Jiu Jitsu da Team Vini" loading="lazy">
                 </picture>
                 <picture>
-                    <source srcset="assets/img/equipemma.png" type="image/webp">
+                    <source srcset="assets/img/equipemma.webp" type="image/webp">
                     <img src="assets/img/equipemma.png" alt="Foto da equipe de MMA da Team Vini" loading="lazy">
                 </picture>
             </div>
@@ -146,7 +148,7 @@
                             <p>Brasília - DF</p>
                             <div class="contato-maps">
                                 <a href="https://maps.app.goo.gl/qqywD6JYVwoCXH427">
-                                    <img src="assets/icon/map.png" alt="Ícone do mapa" class="map-icon">
+                                    <img src="assets/icon/map.webp" alt="Ícone do mapa" class="map-icon" loading="lazy">
                                 </a>
                             </div>
                         </div>
@@ -200,7 +202,11 @@
                 console.log('ServiceWorker registration failed: ', err);
             });
         }
+        window.addEventListener('unload', function() {
+            if (window.myWebSocket) {
+                window.myWebSocket.close();
+            }
+        });
     </script>
-    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
