@@ -1,4 +1,5 @@
-  document.addEventListener('DOMContentLoaded', function () {
+ 
+ document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = mobileMenu.querySelectorAll('a');
@@ -49,7 +50,7 @@
             document.getElementById('btn-sort').addEventListener('click', function (e) {
                 e.preventDefault();
                 let telefone = '5561984440287';
-                let textoRifa = `Olá, gostaria de saber mais sobre a Rifa.`;
+                let textoRifa = `Olá, gostaria de mais informações sobre Academia!`;
                 let urlWhatsapp = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(textoRifa)}`;
                 window.open(urlWhatsapp, '_blank');
             });
@@ -65,4 +66,4 @@
                 }
                 lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             }, false);
-        });
+    });
